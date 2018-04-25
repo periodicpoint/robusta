@@ -1,10 +1,10 @@
-# arabica
+# robusta
 A sound and versatile [pandoc](http://pandoc.org/) [LaTeX](https://www.latex-project.org/) boilerplate to produce academic books (in PDF) utilising solely modular [Markdown](https://daringfireball.net/projects/markdown/) files, featuring
 [YAML](http://yaml.org/), [KOMA-Script](https://ctan.org/pkg/koma-script?lang=en), [BibLaTeX](https://ctan.org/pkg/biblatex?lang=en) and
 [CSL](http://citationstyles.org/).
 
 # Thanks
-The [*arabica boilerplate*](https://github.com/qualiacode/arabica) is inspired by the [pandoc latex template *eisvogel* by Wandmalfarbe](https://github.com/Wandmalfarbe/pandoc-latex-template) and was built with the help of the following sources and tools: [References and Credits](#references-and-credits).
+The [*robusta boilerplate*](https://github.com/qualiacode/robusta) is inspired by the [pandoc latex template *eisvogel* by Wandmalfarbe](https://github.com/Wandmalfarbe/pandoc-latex-template) and was built with the help of the following sources and tools: [References and Credits](#references-and-credits).
 For other projects like the one at hand please see [the list of user contributed templates at the pandoc wiki](https://github.com/jgm/pandoc/wiki/User-contributed-templates)
 and
 [the list of pandoc boilerplates at the pandoc wiki](https://github.com/jgm/pandoc/wiki/Pandoc-Boilerplates).
@@ -18,9 +18,11 @@ The *pandoc template* itself lives in `./controls/`.
 4. State-of-the-art technology stack and low tech debt at the same time.
 
 # Preview
-Default title page | Default info page | Default example page
+... coming soon ...
+<!--Default title page | Default info page | Default example page
 :-----------------:|:-----------------:|:--------------------:
-[![Default title page ](/examples/default_a/output/titlepage.png)](/examples/default_a/output/arabica.pdf) | [![Default info page](/examples/default_a/output/infopage.png)](/examples/default_a/output/arabica.pdf) | [![Default example page](/examples/default_a/output/examplepage.png)](/examples/default_a/output/arabica.pdf)
+[![Default title page ](/examples/default_a/output/titlepage.png)](/examples/default_a/output/robusta.pdf) | [![Default info page](/examples/default_a/output/infopage.png)](/examples/default_a/output/robusta.pdf) | [![Default example page](/examples/default_a/output/examplepage.png)](/examples/default_a/output/robusta.pdf)
+-->
 
 # Examples
 Go to `./examples/` [to view a list of complete example book projects](/examples/).
@@ -33,13 +35,13 @@ Go to `./examples/` [to view a list of complete example book projects](/examples
 ## Clone
 1. Go to your templates directory: `cd /path/to/your/templates/`.
 2. Clone (or download) this repository
-`git clone https://github.com/qualiacode/arabica.git`
+`git clone https://github.com/qualiacode/robusta.git`
 3. **Done!**
 
 # Use
 ## Optional: copy, paste, rename, delete
-1. Copy the entire *arabica boilerplate* located at your own local templates directory and paste the entire *arabica boilerplate* to your directory of your own projects directory:
-`cp /path/to/your/templates/arabica/* /path/to/your/projects/projectname/`
+1. Copy the entire *robusta boilerplate* located at your own local templates directory and paste the entire *robusta boilerplate* to your directory of your own projects directory:
+`cp /path/to/your/templates/robusta/* /path/to/your/projects/projectname/`
 2. Go to your project directory:
 `cd /path/to/your/projects/projectname/`
 3. Delete all the files you do not need e.g. `./examples`:
@@ -150,9 +152,9 @@ pandoc                                                                      \
   --filter pandoc-crossref                                                  \
   --filter pandoc-citeproc                                                  \
   --pdf-engine=xelatex                                                      \
-  --top-level-division=chapter                                              \
+  --top-level-division=section                                              \
   --number-sections                                                         \
-  --template $HOME/path/to/your/projects/projectname/controls/arabica.latex \
+  --template $HOME/path/to/your/projects/projectname/controls/robusta.latex \
   ./core/*.md                                                               \
   ./settings/*.yaml                                                         \
   ./metadata/*.yaml
@@ -160,9 +162,9 @@ pandoc                                                                      \
 
 2. **Done!**
 
-3. Alternatively you can omit the long path in the `--template` option by copying the `arabica.latex` template located at `./controls/arabica.latex` to the default directory of your pandoc templates located at `~/.pandoc/templates/`.
+3. Alternatively you can omit the long path in the `--template` option by copying the `robusta.latex` template located at `./controls/robusta.latex` to the default directory of your pandoc templates located at `~/.pandoc/templates/`.
 
-4. If you have copied the `arabica.latex` template into the directory of your default pandoc templates, then you can execute pandoc like this:
+4. If you have copied the `robusta.latex` template into the directory of your default pandoc templates, then you can execute pandoc like this:
 
 ```shell
 pandoc                                                \
@@ -174,7 +176,7 @@ pandoc                                                \
   --pdf-engine=xelatex                                \
   --top-level-division=chapter                        \
   --number-sections                                   \
-  --template arabica.latex                            \
+  --template robusta.latex                            \
   ./core/*.md                                         \
   ./settings/*.yaml                                   \
   ./metadata/*.yaml
@@ -185,11 +187,11 @@ pandoc                                                \
 -o ./output/projectname.tex
 ```
 
-5. Please note, though: the *arabica boilerplate* is designed to be used with the given directory structure respectively file structure indicated in [BODYPLAN.md](./BODYPLAN.md).
+5. Please note, though: the *robusta boilerplate* is designed to be used with the given directory structure respectively file structure indicated in [BODYPLAN.md](./BODYPLAN.md).
 Of particular importance are the *metadata* and *settings* files: `./metadata/00_01_metadata.yaml` `./settings/00_02_settings.yaml`.
 
 6. The boilerplate should work even if you change its inner structure but keep in mind to change all the paths and variables accordingly.
-The `arabica.template` file may work as long as you provide some basic variables used in this template file.
+The `robusta.template` file may work as long as you provide some basic variables used in this template file.
 
 # Enjoy
 1. Go to `./output/` and enjoy your results.

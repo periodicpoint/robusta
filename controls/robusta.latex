@@ -968,38 +968,58 @@ $endif$
 
 %------------------------------------------------------print title page(s) here
 $if(custom_title_page)$
-%-------------------------------if set define and print custom title pages here
+%-------------------------------if set define AND print custom title pages here
   \begin{titlepage}
     ...
   \end{titlepage}
 $else$
 %------------------------------------------------print default title pages here
-  \maketitle
+  $if(onecol_toc)$
+    $if(title)$
+      \maketitle
+    $endif$
+    \twocolumn[%
+      \begin{@twocolumnfalse}
+        $if(display_abstract)$
+          \begin{abstract}
+            $abstract$
+          \end{abstract}
+        $endif$
+        $if(toc)$
+          $if(colorlinks)$
+            \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$$endif$}
+          $endif$
+          \setcounter{tocdepth}{$toc-depth$}
+          \tableofcontents
+          \bigskip
+        $endif$
+      \end{@twocolumnfalse}
+    ]
+  $else$
+    $if(title)$
+      \maketitle
+    $endif$
+    $if(display_abstract)$
+      \begin{abstract}
+        $abstract$
+      \end{abstract}
+    $endif$
+    $if(toc)$
+      $if(colorlinks)$
+        \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$$endif$}
+      $endif$
+      \setcounter{tocdepth}{$toc-depth$}
+      \tableofcontents
+      %\bigskip
+    $endif$
+  $endif$
 $endif$
-
-%--------------------------------------------------------start frontmatter here
-\frontmatter
 
 $for(include-before)$
 $include-before$
 
 $endfor$
 
-$if(toc)$
-$if(beamer)$
-\begin{frame}
-\tableofcontents[hideallsubsections]
-\end{frame}
-$else$
-{
-$if(colorlinks)$
-\hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$$endif$}
-$endif$
-\setcounter{tocdepth}{$toc-depth$}
-\tableofcontents
-}
-$endif$
-$endif$
 $if(lot)$
 \listoftables
 $endif$

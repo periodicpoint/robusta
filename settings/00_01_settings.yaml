@@ -21,7 +21,7 @@ fontsize: '11pt'
 # document class, e.g. article, report, book, memoir, scrreport, scrartcl,
 # default: 'scrbook'
 # DO NOT CHANGE THIS OPTION!
-documentclass: 'scrbook'
+documentclass: 'scrartcl'
 
 # option for document class, e.g. titlepage, oneside; may be repeated for
 # multiple options.
@@ -43,8 +43,19 @@ classoption:
   - 'twoside'
   - 'twocolumn'
   - 'parskip=full'
+  - 'titlepage=false'
+  - 'abstract=true'
 
 # TITLEPAGE(S) SETTINGS
+# ABSTRACT
+# activate / deactivate display of your abtsract TEXT
+# the classoption "abstract" only specifies if the (language dependent) heading
+# "Abstract" is displayed or not.
+# set BOTH: 'abstract=false' AND 'display_abstract: false'
+# OR BOTH: 'abstract=true' AND 'display_abstract: true'
+# default: true
+display_abstract: true
+
 # to omit the default title pages and specify your own titlepage layout in
 # ./controls/arabica.latex
 # default: false
@@ -52,7 +63,7 @@ custom_title_page: false
 
 # to have a half title (page)
 # default: true
-extratitle: true
+extratitle: false
 
 # to have additional information (advisors name, …) in the publishers field
 # this option needs extratitile to be true
@@ -68,12 +79,6 @@ titlepage:
   graphic: #'./graphics/dummygraphic.pdf'
   logo: #'./graphics/dummylogo.pdf'
 
-# activate / deactivate display of your abtsract text
-# the classoption "abstract" only specifies if the (language dependent) heading
-# "Abstract" is displayed or not.
-# default: true
-display_abstract: true
-
 # include table of contents (can also be set using --toc/--table-of-contents)
 # default: true
 toc: ture
@@ -82,7 +87,7 @@ toc: ture
 # in twocolumn,then set this option to true.
 # if true, loading pkg "multicol" is mandatory
 # default: false
-onecol_toc: false
+onecol_toc: true
 
 # level of section to include in table of contents
 # default: 2
